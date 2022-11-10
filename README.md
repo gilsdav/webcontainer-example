@@ -13,4 +13,4 @@ Run these commands in parallel:
 
 ## Demo
 
-<a href="https://webcontainer-example.web.app" target="_blank">https://webcontainer-example.web.app</a>
+[https://webcontainer-example.web.app](https://webcontainer-example.web.app)
