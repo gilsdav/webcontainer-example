@@ -10,7 +10,9 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prepublish": "node prepare-publish.js",
+    "publish": "firebase deploy"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +28,8 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "declaration-bundler-webpack-plugin": "^1.0.3",
+    "firebase-tools": "^11.16.0",
+    "fs-extra": "^10.1.0",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0",
