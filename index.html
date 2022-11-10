@@ -25,6 +25,7 @@
     <body>
         <h1>Hello on WebContainer App</h1>
         <p>I will install json-server and run it into your browser 🤯</p>
+        <a id="browserLink" target="_blank">Open in new tab</a>
 
         <div id="logs"></div>
 
@@ -45,6 +46,7 @@
                     setTimeout(() => {
                         // window.open(url, '_blank');
                         document.querySelector('#browser').src = url;
+                        document.querySelector('#browserLink').href = url;
                     }, 3000);
                 });
                 // Init files
