@@ -1,0 +1,12 @@
+{
+    "name": "test",
+    "version": "1.0.0",
+    "description": "My webpack project",
+    "scripts": {
+        "dev": "json-server --watch db.json"
+    },
+    "dependencies": {
+        "json-server": "^0.17.0",
+        "@webcontainer/env": "^1.0.1"
+    }
+}

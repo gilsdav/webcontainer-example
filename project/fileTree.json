@@ -1,0 +1,14 @@
+{
+    "rootFolder": "/project",
+    "files": [
+        {
+            "fileName": "package.json"
+        },
+        {
+            "fileName": "hostRelover.mjs"
+        },
+        {
+            "fileName": "db.json"
+        }
+    ]
+}

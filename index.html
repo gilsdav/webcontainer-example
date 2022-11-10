@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WebContainer Usage Example</title>
+        <style>
+            #browser {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: calc(100vh - 5px);
+                width: calc(50vw - 5px);
+            }
+            #logs {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: calc(50vh - 5px);
+                width: calc(50vw - 5px);
+                border: solid;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello on WebContainer App</h1>
+        <p>I will install json-server and run it into your browser 🤯</p>
+
+        <div id="logs"></div>
+
+        <iframe id="browser"></iframe>
+
+        <script src="dist/main.js"></script>
+        <script>
+
+            let globalBackend;
+
+            async function start() {
+                const backend = new MyApp.Backend('#logs');
+                globalBackend = backend;
+                // Wait backend to be started
+                await backend.initialized;
+                console.log('started');
+                backend.urlEmiter.then(url => {
+                    setTimeout(() => {
+                        // window.open(url, '_blank');
+                        document.querySelector('#browser').src = url;
+                    }, 3000);
+                });
+                // Init files
+                const projectConfig = await fetch('/project/fileTree.json').then(response => response.json());
+                const fileTree = await projectConfig.files.reduce(async (resultP, file) => {
+                    const result = await resultP;
+                    result[file.fileName] = {
+                        file: {
+                            contents: await fetch(`${projectConfig.rootFolder}/${file.fileName}`).then(response => response.text())
+                        }
+                    };
+                    return result;
+                }, Promise.resolve({}));
+                backend.initProject(fileTree);
+                // Start dev server
+                backend.startDevServer();
+            }
+            start();
+
+            function stop() {
+                globalBackend.stop();
+            }
+        </script>
+
+    </body>
+    
+</html>
