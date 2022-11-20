@@ -80,7 +80,7 @@ export class Backend {
     
     async startDevServer() {
         await this.runCommand({command: 'npm', args: ['i']}, 'npm install');
-        await this.runCommand({command: 'node', args: ['hostRelover.mjs']}, 'Host resolver')
+        await this.runCommand({command: 'node', args: ['hostResolver.mjs']}, 'Host resolver')
             .then(([url]) => this.emitUrl(url));
         await this.runCommand({command: 'npm', args: ['run', 'dev']}, 'npm runDev');
     }
