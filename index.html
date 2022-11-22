@@ -37,12 +37,13 @@
             let globalBackend;
 
             async function start() {
-                const backend = new MyApp.Backend('#logs');
+                const logger = new MyApp.Logger('#logs');
+                const backend = new MyApp.Backend(logger);
                 globalBackend = backend;
                 // Wait backend to be started
                 await backend.initialized;
                 console.log('started');
-                backend.urlEmiter.then(url => {
+                backend.urlEmitter.then(url => {
                     setTimeout(() => {
                         // window.open(url, '_blank');
                         document.querySelector('#browser').src = url;

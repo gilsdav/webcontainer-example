@@ -5,7 +5,7 @@
             "fileName": "package.json"
         },
         {
-            "fileName": "hostRelover.mjs"
+            "fileName": "hostResolver.mjs"
         },
         {
             "fileName": "db.json"
