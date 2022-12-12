@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "My webpack project",
     "scripts": {
-        "dev": "json-server --watch db.json"
+        "dev": "json-server --watch db.json && npm install hyperccore"
     },
     "dependencies": {
         "json-server": "^0.17.0",
