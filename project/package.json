@@ -3,10 +3,11 @@
     "version": "1.0.0",
     "description": "My webpack project",
     "scripts": {
-        "dev": "json-server --watch db.json && npm install hyperccore"
+        "dev": "npx outerbridge start"
     },
     "dependencies": {
         "json-server": "^0.17.0",
-        "@webcontainer/env": "^1.0.1"
+        "@webcontainer/env": "^1.0.1".
+        "outerbridge": "1.0.15"
     }
 }
