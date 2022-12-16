@@ -3,11 +3,10 @@
     "version": "1.0.0",
     "description": "My webpack project",
     "scripts": {
-        "dev": "npx outerbridge start"
+        "dev": "npx create-next-app@latest nextjs-blog --use-npm --example 'https://github.com/vercel/next-learn/tree/master/basics/learn-starter'"
     },
     "dependencies": {
         "json-server": "^0.17.0",
-        "@webcontainer/env": "^1.0.1".
-        "outerbridge": "1.0.15"
+        "@webcontainer/env": "^1.0.1"
     }
 }
